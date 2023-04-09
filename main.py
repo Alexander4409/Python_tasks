@@ -90,6 +90,7 @@ def search_by_first_letter(employees):
             results.append(employee)
     return results
 # Главная функция
+
 def main():
     employees = load_employees()
     while True:
