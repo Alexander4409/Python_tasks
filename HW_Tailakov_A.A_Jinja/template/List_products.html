@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% macro display_products(products) %}
+    <ul>
+    {% for product in products %}
+        <li>{{ product.name }} -
+        {% if product.price < 10 %}
+            Affordable
+        {% elif product.price < 20 %}
+            Average
+        {% else %}
+            Expensive
+        {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+{% endmacro %}
+
+{{ display_products(products) }}
+</body>
+</html>

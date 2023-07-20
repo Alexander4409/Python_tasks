@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Title {% endblock %} </title>
+</head>
+<body>
+
+{% macro display_users(persons) %}
+<ul>
+    {% for person in persons %}
+        {% if person.email.endswith('gmail.com') %}
+            <li>{{ person.name }} - {{ person.email }}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+{% endmacro %}
+
+{{ display_users(persons) }}
+
+</body>
+</html>
